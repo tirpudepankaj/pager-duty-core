@@ -3,6 +3,9 @@
  */
 package pager.duty.core;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class PagerDutyCoreApp {
     public String getGreeting() {
         return "Hello World!";
