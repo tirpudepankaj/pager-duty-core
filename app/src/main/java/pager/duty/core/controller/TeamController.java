@@ -10,7 +10,6 @@ import pager.duty.core.service.TeamService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/page-duty-core")
 public class TeamController {
 
     private TeamService teamService;
@@ -20,20 +19,20 @@ public class TeamController {
         this.teamService = teamService;
     }
 
-    @PostMapping("/team")
+    @PostMapping("/page-duty-core/team")
     public ResponseEntity<TeamModel> create(@RequestBody TeamModel teamModel) {
         return
                 ResponseEntity.accepted()
                         .body(teamService.create(teamModel));
     }
 
-    @GetMapping("/team")
+    @GetMapping("/page-duty-core/team")
     public ResponseEntity<List<TeamModel>> getAll() {
         return
                 ResponseEntity.ok().body(teamService.getAll());
     }
 
-    @GetMapping("/team/{teamId}")
+    @GetMapping("/page-duty-core/team/{teamId}")
     public ResponseEntity<TeamModel> get(@PathVariable long teamId) {
         return ResponseEntity.ok().body(teamService.get(teamId));
     }
